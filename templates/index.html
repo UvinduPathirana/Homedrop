@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+        <!-- Single Catagory -->
+        {% if vendor %}
+        {% for vendor in vendor %}
+        <div class="single-products-catagory clearfix fontcolor" style="position: absolute; left: 0%; top: 0px;">
+            <a href="/flyer/{{ vendor[0] }}">
+                <img src="/images/{{ vendor[6] }}" alt="">
+                <!-- Hover Content -->
+                <div class="hover-content">
+                    <div class="line"></div>
+                    <h4 style="color: white;">{{ vendor[1] }}</h4>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+        {% endif %}
+</div>
+{% endblock %}
+{% block title %}
+<title>Home Drop Uvindu</title>
+{% endblock %}

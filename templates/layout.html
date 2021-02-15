@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    {% block title %}
+    {% endblock %}
+
+    <!-- Favicon  -->
+    <link rel="icon" href="/images/core-img/favicon.png">
+
+    <!-- Core Style CSS -->
+    <link rel="stylesheet" href="/css/core-style.css">
+    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/classy-nav.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="/css/magnific-popup.css">
+    <link rel="stylesheet" href="/css/nice-select.css">
+    <link rel="stylesheet" href="/css/owl.carousel.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <!-- Search Wrapper Area Start -->
+    <div class="search-wrapper section-padding-100">
+        <div class="search-close">
+            <i class="fa fa-close" aria-hidden="true"></i>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="search-content">
+                        <form action="#" method="get">
+                            <button type="submit"><img src="/img/core-img/search.png" alt=""></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Search Wrapper Area End -->
+
+    <!-- ##### Main Content Wrapper Start ##### -->
+    <div class="main-content-wrapper d-flex clearfix">
+
+        <!-- Mobile Nav (max width 767px)-->
+        <div class="mobile-nav">
+            <!-- Navbar Brand -->
+            <div class="amado-navbar-brand">
+                <a href="/"><img src="/img/core-img/logo1.png" alt=""></a>
+            </div>
+            <!-- Navbar Toggler -->
+            <div class="amado-navbar-toggler">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+
+        <!-- Header Area Start -->
+        <header class="header-area clearfix">
+            <!-- Close Icon -->
+            <div class="nav-close">
+                <i class="fa fa-close" aria-hidden="true"></i>
+            </div>
+            <!-- Logo -->
+            <div class="logo">
+                <a href="/"><img src="/img/core-img/logo1.png" alt=""></a>
+            </div>
+            <!-- Amado Nav -->
+            <h4>Categories</h4>
+            <nav class="amado-nav">
+                <ul>
+                    <!-- href = categories/:id
+                        application; > categories/:id that ids vendors u bring
+                     -->
+                    {% if vendorcategories %}
+                    {% for categories in vendorcategories %}
+                    <li><a href="{{ categories[2] }}">{{ categories[1] }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+            </nav>
+            <div class="categories_button">
+                <h4 style="margin-top: 60px;">Locations</h4>
+            </div>
+            <nav class="amado-nav">
+                <ul>
+                    {% if vendorlocations %}
+                    {% for locations in vendorlocations %}
+                    <li><a href="{{locations[2]}}">{{ locations[1] }}</a></li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+            </nav>
+        </header>
+        <!-- Header Area End -->
+
+        <!-- Product Catagories Area Start -->
+        <div class="products-catagories-area clearfix">
+            <div class="amado-pro-catagory clearfix" style="position: relative; height: 1433.67px;">
+                {% block content %}
+                <!-- index.html -->
+                {% endblock %}
+            </div>
+        </div>
+
+        <!-- Product Catagories Area End -->
+    </div>
+    <!-- ##### Newsletter Area End ##### -->
+
+    <!-- ##### Footer Area Start ##### -->
+    <div class="block-footer">
+        <footer class="footer_area clearfix block">
+            <div class="container">
+                <div class="row align-items-center">
+                    <!-- Single Widget Area -->
+                    <div class="col-12 col-lg-4">
+                        <div class="single_widget_area">
+                            <!-- Logo -->
+                            <div class="footer-logo mr-50">
+                            </div>
+                            <!-- Copywrite Text -->
+                            <p class="copywrite">
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright ©
+                                <script>document.write(new Date().getFullYear());</script>2020 All rights reserved |
+                                This
+                                template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a
+                                    href="https://colorlib.com" target="_blank">Uvindu Pathirana</a> &amp; Assisted by
+                                <a href="https://themewagon.com/" target="_blank">Dinuda Yaggahavita</a>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- ##### Footer Area End ##### -->
+
+    <!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
+    <script src="/js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="/js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="/js/plugins.js"></script>
+    <!-- Active js -->
+    <script src="/js/active.js"></script><a id="scrollUp" href="#top"
+        style="display: none; position: fixed; z-index: 2147483647;"><i class="fa fa-angle-up"
+            aria-hidden="true"></i></a>
+
+
+
+</body>
+
+</html>
+<style>
+    @media only screen and (max-width: 900px) {
+
+        .d-block {
+            margin-top: 72px;
+        }
+
+        .block-footer {
+            display: none;
+        }
+
+        .single_product_desc {
+            margin-top: -769px;
+        }
+
+        .container {
+            margin-top: 0pc;
+            width: 317px;
+        }
+
+        .btn {
+            margin-top: 488px;
+            margin-left: 87px;
+        }
+
+        .call {
+            padding: 16px;
+            margin-top: 519px;
+        }
+
+        .uvindu {
+            margin-left: 85px;
+            border-radius: 7px;
+            color: #ffffff;
+        }
+
+        .uvindu1 {
+            color: #ffffff;
+        }
+
+        .uvindu3 {
+            margin-left: -25px;
+            width: 337px;
+            height: 30px;
+        }
+
+        .visit {
+            margin-top: -9px;
+        }
+
+        .nice-select {
+            margin-top: 28px;
+            margin-left: -25px;
+            width: 343px;
+        }
+
+        .visit2 {
+            margin-top: -37px;
+            margin-left: 92px;
+            color: white;
+        }
+        .call1{
+            margin-left: 154px;
+        }
+        .call{
+            margin-top: 587px;
+        }
+        .selected{
+            width: 341px;
+            margin-left: 5px;
+        }
+    }
+</style>

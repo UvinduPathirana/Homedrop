@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+        <!-- Single Catagory -->
+        {% if locations %}
+        {% for locations in locations %}
+        <div class="single-products-catagory clearfix fontcolor" style="position: absolute; left: 0%; top: 0px;">
+            <a href="{{ locations[0] }}">
+                <img src="/images/{{ locations[6] }}" alt="">
+                <!-- Hover Content -->
+                <div class="hover-content">
+                    <div class="line"></div>
+                    <h4>{{ locations[1] }}</h4>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+        {% endif %}
+</div>
+{% endblock %}
+{% block title %}
+<title>Home Drop Uvindu</title>
+{% endblock %}

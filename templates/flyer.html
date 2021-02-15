@@ -1,0 +1,241 @@
+{% extends "layout.html" %}
+
+{% block content %}
+{% if vendors %}
+{% if vendors %}
+{% for vendors in vendors %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/style.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<div class="single-product-area section-padding-100 clearfix">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mt-50">
+                        <li class="breadcrumb-item active" aria-current="page"></li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-lg-7">
+                <div class="single_product_thumb">
+                    <div id="product_details_slider" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <a class="gallery_img">
+                                    <img class="d-block w-100" src="/images/{{vendors[6]}}" alt="Second slide">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-5">
+                <div class="single_product_desc">
+                    <!-- Product Meta Data -->
+                    <div class="product-meta-data">
+                        <div class="line"></div>
+                        <p class="product-price">{{ vendors[1] }}</p>
+                        <a href="product-details.html">
+                            <h6></h6>
+                        </a>
+                        <!-- Avaiable -->
+                    </div>
+                    <div class="short_overview my-5">
+                    </div>
+                    <div>
+                        <a class="btn amado-btn call" href="{{ vendors[9] }}"></a>
+                        <div class="call1">Call</div>
+                        <p> . </p>
+                    </div>
+                    <div>
+                        <a class="btn amado-btn visit" style="width: 16px;" href="{{ vendors[3] }}"></a> </div>
+                    <div>
+                        <h6 class="visit2"> Visit {{vendors[3]}}</h6>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                    <!-- <div class="container select1">
+                        <select name="phonenumbers">
+                            {% if vendorphonenumebrs %}
+                            {% for phonenumber in vendorphonenumebrs %}
+                            <option whatsapp="{{ phonenumber[6] }}">
+                                {{ phonenumber[2] }}:<span>
+                                    {% if phonenumber[3] %}
+                                    <div>Whatsapp Availbale</div>
+                                    {% else %}
+                                    <div>Whatsapp Unavailble</div>
+                                    {% endif %}
+                                    {% if phonenumber[4] %}
+                                    <div>Viber Availbale</div>
+                                    {% else %}
+                                    <div>Viber Unavailble</div>
+                                    {% endif %}
+                                    {% if phonenumber[5] %}
+                                    <div>Call Availbale</div>
+                                    {% else %}
+                                    <div>Call Unavailble</div>
+                                    {% endif %}
+                                </span>
+                            </option>
+                            <option>{{ phonenumber[6] }}</option>
+                            {% endfor %}
+                        </select>
+                        {% endif %}
+                    </div> -->
+                    <div class="container phonenumber" style="margin-top: 10px;margin-left: -33px;">
+                        <div class="select-box">
+                            <div class="options-container">
+                                {% if vendorphonenumebrs %}
+                                {% for phonenumber in vendorphonenumebrs %}
+                                <div class="option">
+                                    <span>
+                                    <input type="radio" class="radio" id="automobiles" name="category" />
+                                    {{ phonenumber[2] }}
+                                    {% if phonenumber[3] %}
+                                    <label for="automobiles">Whatsapp Available</label>
+                                    {% else %}
+                                    <div>Whatsapp Unavailble</div>
+                                    {% endif %}
+                                    {% if phonenumber[4] %}
+                                    <label for="automobiles">Viber Available</label>
+                                    {% else %}
+                                    <div>Viber Unavailble</div>
+                                    {% endif %}
+                                    {% if phonenumber[5] %}
+                                    <label for="automobiles">Call Available</label>
+                                    {% else %}
+                                    <div>Call Unavailble</div>
+                                    {% endif %}
+                                </span>
+                                </div>
+                                {% endfor %}
+                                {% endif %}
+                            </div>
+
+                            <div class="selected">
+                                Click To See Phonenumbers
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <script src="/js/main.js"></script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+{% endif %}
+{% endblock %}
+<style>
+    * {
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: "Roboto", sans-serif;
+        background: #f7f6ff;
+    }
+
+    h2 {
+        margin: 16px;
+    }
+
+    .container {
+        margin-top: 100px;
+        padding: 32px;
+    }
+
+    .select-box {
+        display: flex;
+        width: 400px;
+        flex-direction: column;
+    }
+
+    .select-box .options-container {
+        background: #2f3640;
+        color: #f5f6fa;
+        max-height: 0;
+        width: 100%;
+        opacity: 0;
+        transition: all 0.4s;
+        border-radius: 8px;
+        overflow: hidden;
+
+        order: 1;
+    }
+
+    .selected {
+        background: #2f3640;
+        border-radius: 8px;
+        margin-bottom: 8px;
+        color: #f5f6fa;
+        position: relative;
+
+        order: 0;
+    }
+
+    .selected::after {
+        content: "";
+        background: url("img/arrow-down.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        position: absolute;
+        height: 100%;
+        width: 32px;
+        right: 10px;
+        top: 5px;
+
+        transition: all 0.4s;
+    }
+
+    .select-box .options-container.active {
+        max-height: 240px;
+        opacity: 1;
+        overflow-y: scroll;
+    }
+
+    .select-box .options-container.active+.selected::after {
+        transform: rotateX(180deg);
+        top: -6px;
+    }
+
+    .select-box .options-container::-webkit-scrollbar {
+        width: 8px;
+        background: #0d141f;
+        border-radius: 0 8px 8px 0;
+    }
+
+    .select-box .options-container::-webkit-scrollbar-thumb {
+        background: #525861;
+        border-radius: 0 8px 8px 0;
+    }
+
+    .select-box .option,
+    .selected {
+        padding: 12px 24px;
+        cursor: pointer;
+    }
+
+    .select-box .option:hover {
+        background: #414b57;
+    }
+
+    .select-box label {
+        cursor: pointer;
+    }
+
+    .select-box .option .radio {
+        display: none;
+    }
+</style>
